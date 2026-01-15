@@ -19,10 +19,13 @@ export const Item = ({product}) => {
                 <p>{product.category}</p>
                 <h4 className="truncate">{product.name}</h4>
                 <div className="flex items-center gap-0.5">
-                    {Array(5).fill('').map((_, i) => (
+                        <Image src={assets.star} height={22} width={16} alt="StarIcon" />
                         <Image src={assets.star} height={22} width={16} alt="StarIcon" /> 
+                        <Image src={assets.star} height={22} width={16} alt="StarIcon" /> 
+                        <Image src={assets.star} height={22} width={16} alt="StarIcon" />
+                        <Image src={assets.star} height={22} width={16} alt="StarIcon" />  
 
-                    ))}
+
                     <p>({5.0})</p>
                 </div>
                 <div className="flex items-end justify-between mt-3">
