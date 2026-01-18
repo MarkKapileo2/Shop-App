@@ -3,9 +3,11 @@ import React, { useState } from 'react'
 import Title from './Title'
 import { dummyProducts } from '@/public/data'
 import { Item } from './Item'
+import { useAppContext } from '@/context/AppContext'
 
 
 function NewArrivals() {
+    const {products} = useAppContext()
   const [stopScroll, setStopScroll] = useState(false)
 
   return (
@@ -31,7 +33,7 @@ function NewArrivals() {
             <div className='absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-linear-to-r from-background to-transparent'/>
             <div className='marquee-inn flex w-fit' style={{animationPlayState: stopScroll ? "paused" : "running", animationDuration: 22000 + "ms"}}>
                 <div className='flex'>
-                    {dummyProducts.slice(0, 8).map((product, index)=>(
+                    {products.slice(0, 8).map((product, index)=>(
                         <div key={index} className='w-56 mx-5 h-103 relative'>
                             <Item key={index} product={product}/>
                         </div>
