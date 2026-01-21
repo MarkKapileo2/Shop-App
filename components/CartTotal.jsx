@@ -50,7 +50,7 @@ function CartTotal() {
                     </div>
                 )}
             </div>
-            <p className='text-sm font-medium uppercase mt-6'>Promo Code</p>
+            <p className='text-sm font-medium uppercase mt-3'>Promo Code</p>
             <input type='text' className='w-full border-gray-200 bg-background px-3 py-2 mt-2' />
 
             <p className='text-sm font-medium uppercase mt-6'>Payment Method</p>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AppContextProvider from "@/context/AppContext";
+import { Toaster } from "react-hot-toast";
 
 
 const inter = Inter({
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} antialiased`}
       >
         <AppContextProvider>
+          <Toaster />
         <Header />
         {children}
         <Footer />
