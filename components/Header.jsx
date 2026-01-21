@@ -5,8 +5,10 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import Link from "next/link";
 import { assets } from "@/public/data";
+import { useAppContext } from "@/context/AppContext";
 
 function Header() {
+  const {getCartCount} = useAppContext()
   const [open, setOpen] = useState(false);
 
   const navLinks = [
@@ -24,6 +26,7 @@ function Header() {
         !isHomePage ? "bg-white" : "bg-transparent"
       } w-full fixed top-0 left-0 flex items-center justify-between py-4 px-5 md:px-10 shadow-md z-50 transition-all`}
     >
+      {/* Logo */}
       <Link href="/" className="flex items-center gap-1">
         <Image src={assets.logo} height={33} width={33} alt="LogoIcon" />
         <h3 className="text-2xl hidden sm:block">
@@ -62,7 +65,7 @@ function Header() {
         <Link href="/cart" className="relative cursor-pointer">
           <Image src={assets.basket} height={25} width={25} alt="basketIcon" />
           <button className="absolute -top-3 -right-2 text-xs text-white bg-destructive w-[18px] h-[18px] rounded-full">
-            0
+            {getCartCount()}
           </button>
         </Link>
 
