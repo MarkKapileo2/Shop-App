@@ -47,7 +47,7 @@ function Cart() {
               </div>
               <p className="text-center">{currency}{(product.offerPrice * cartItems[itemId]).toFixed(2)}</p>
               <button onClick={()=>updateCartQuantity(product._id, 0)}className="cursor-pointer mx-auto">
-                <Image src={assets.trash} height={19} width={19} className='trashIcon'/>
+                <Image src={assets.trash} height={19} width={19} alt='trashIcon'/>
                 
               </button>
             </div>)
