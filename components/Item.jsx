@@ -1,17 +1,19 @@
 'use client'
+import { useAppContext } from "@/context/AppContext";
 import { assets } from "@/public/data";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const Item = ({product}) => {
+    const {router} = useAppContext()
     const [count, setCount] = useState(0);
-    const router = useRouter()
+
 
 
 
     return (
-        <div onClick={()=>{}} className="rounded-2xl pb-2 overflow-hidden">
+        <div onClick={()=> {router.push("/product/" + product._id)}} className="rounded-2xl pb-2 overflow-hidden">
             <div className="group cursor-pointer flex items-center justify-center overflow-hidden px-2">
                 <Image height={233} width={233} className="group-hover:scale-105 transition w-full" src={product.images[0]} alt={product.name} />
             </div>
